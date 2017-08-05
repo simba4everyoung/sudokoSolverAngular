@@ -27,7 +27,8 @@ module.exports = function (grunt) {
       view: {
         files: [
           'index.html'
-        ]
+        ],
+        tasks: []
       },
       css: {
         files: [

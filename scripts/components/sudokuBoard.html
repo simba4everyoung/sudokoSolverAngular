@@ -1,0 +1,10 @@
+<table class="sd-board">
+  <tr class="sd-board_row"
+      ng-repeat="row in $ctrl.puzzle track by $index">
+    <td class="sd-board_grid"
+        ng-repeat="num in row track by $index">
+      <div ng-if="num === 0"></div>
+      <div ng-if="num !== 0" ng-bind="num"></div>
+    </td>
+  </tr>
+</table>

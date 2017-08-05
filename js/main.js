@@ -24,10 +24,10 @@
     .module('sdApp')
     .controller('mainController', mainController);
 
-  mainController.$inject = ['$scope'];
+  mainController.$inject = ['$scope', 'sudokuSolver'];
 
-  function mainController ($scope) {
-    $scope.puzzle = [
+  function mainController ($scope, sudokuSolver) {
+    var puzzle = [
       [1, 0, 0, 0, 5, 4, 7, 0, 3],
       [3, 0, 0, 0, 2, 0, 0, 6, 8],
       [0, 6, 7, 0, 3, 8, 0, 0, 9],
@@ -38,7 +38,18 @@
       [4, 1, 0, 0, 6, 0, 0, 0, 5],
       [6, 0, 8, 5, 4, 0, 0, 0, 2]
     ];
+
+    // **************
+    // model
+    // **************
+
+    $scope.puzzle = puzzle;
     $scope.results = generateEmptyPuzzle();
+    $scope.solve = sudokuSolver.solve;
+
+    // ******************
+    // functions
+    // ******************
 
     function generateEmptyPuzzle () {
       var array = [];
@@ -48,6 +59,30 @@
         );
       }
       return array;
+    }
+  }
+})();
+
+(function () {
+  'use strict';
+
+  angular
+    .module('sdApp')
+    .factory('sudokuSolver', sudokuSolver);
+
+  function sudokuSolver () {
+    var service = {
+      solve: solve
+    };
+
+    return service;
+
+    // **************
+    // functions
+    // **************
+    
+    function solve () {
+      console.log('solved');
     }
   }
 })();

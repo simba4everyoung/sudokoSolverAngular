@@ -38,5 +38,16 @@
       [4, 1, 0, 0, 6, 0, 0, 0, 5],
       [6, 0, 8, 5, 4, 0, 0, 0, 2]
     ];
+    $scope.results = generateEmptyPuzzle();
+
+    function generateEmptyPuzzle () {
+      var array = [];
+      for (var i = 0; i < 9; i++) {
+        array.push(
+          new Array(10).join('0').split('').map(parseFloat)
+        );
+      }
+      return array;
+    }
   }
 })();

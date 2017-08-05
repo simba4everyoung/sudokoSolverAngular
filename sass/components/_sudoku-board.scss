@@ -6,13 +6,18 @@
     }
 
     .sd-board_grid {
-      padding: 10px 14px;
+      width: 40px;
+      height: 40px;
       border: 1px solid grey;
       font-size: 16px;
 
       &:nth-child(3),
       &:nth-child(6) {
         border-right: 2px solid darken(grey, 20%);
+      }
+
+      .sd-board_num {
+        text-align: center;
       }
     }
   }

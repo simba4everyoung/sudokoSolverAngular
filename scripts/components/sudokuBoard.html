@@ -3,8 +3,8 @@
       ng-repeat="row in $ctrl.puzzle track by $index">
     <td class="sd-board_grid"
         ng-repeat="num in row track by $index">
-      <div ng-if="num === 0"></div>
-      <div ng-if="num !== 0" ng-bind="num"></div>
+      <div class="sd-board_num" ng-if="num === 0"></div>
+      <div class="sd-board_num" ng-if="num !== 0" ng-bind="num"></div>
     </td>
   </tr>
 </table>
